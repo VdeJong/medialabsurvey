@@ -1,6 +1,7 @@
 /**
  * Created by vincentdejong on 14-02-17.
  */
+
 var surveyJSON = {
     pages: [
         {
@@ -31,7 +32,7 @@ var surveyJSON = {
                     name: "How long have you been playing hockey, in years?"
                 },
                 {
-                    type: "text",
+                    type: "comment",
                     // isRequired: true,
                     name: "What is your favourite festival, and why?",
                     placeHolder: "My favourite festival is ... , because ..."
@@ -172,4 +173,26 @@ var survey = new Survey.Model(surveyJSON);
 $("#surveyContainer").Survey({
     model: survey,
     onComplete: sendDataToServer
+});
+
+$('#sq_100i').flagStrap({
+    // the `name` attribute for the actual `select` input
+    inputName: "country",
+
+// The bootstrap 'class' for this dropdown
+    buttonSize: "btn-md",
+
+// The bootstrap 'class' for this drop down
+    buttonType: "btn-default",
+
+// The `margin` between `flag` and `text label`
+    labelMargin: "10px",
+
+// <a href="http://www.jqueryscript.net/tags.php?/Scroll/">Scroll</a>able or full height drop down
+    scrollable: true,
+
+// `max-height` for the scrollable drop down
+    scrollableHeight: "250px"
+
+// Only show specific countries
 });
