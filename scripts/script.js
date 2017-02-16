@@ -162,6 +162,12 @@ var surveyJSON = {
 
 var surveyId = '0a816cb1-8086-4ffb-8d5b-d60231a8de32';
 
+var survey = new Survey.Model(surveyJSON);
+$("#surveyContainer").Survey({
+    model: survey,
+    onComplete: sendDataToServer
+});
+
 function sendDataToServer(survey) {
     //send Ajax request to your web server.
     alert("The results are:" + JSON.stringify(survey.data));
@@ -169,30 +175,19 @@ function sendDataToServer(survey) {
     survey.sendResult(surveyId);
 }
 
-var survey = new Survey.Model(surveyJSON);
-$("#surveyContainer").Survey({
-    model: survey,
-    onComplete: sendDataToServer
+$('#sq_100').flagStrap({
+    inputName: "country",
+    buttonSize: "btn-md",
+    buttonType: "btn-default",
+    labelMargin: "10px",
+    scrollable: true,
+    scrollableHeight: "250px"
 });
 
-$('#sq_100i').flagStrap({
-    // the `name` attribute for the actual `select` input
-    inputName: "country",
+$('[name="country"]').change(function() {
+    var country = $(this).children(":selected").text();
+    var inputElement = $("#sq_100i");
+    inputElement.focus();
+    inputElement.val(country);
 
-// The bootstrap 'class' for this dropdown
-    buttonSize: "btn-md",
-
-// The bootstrap 'class' for this drop down
-    buttonType: "btn-default",
-
-// The `margin` between `flag` and `text label`
-    labelMargin: "10px",
-
-// <a href="http://www.jqueryscript.net/tags.php?/Scroll/">Scroll</a>able or full height drop down
-    scrollable: true,
-
-// `max-height` for the scrollable drop down
-    scrollableHeight: "250px"
-
-// Only show specific countries
 });
