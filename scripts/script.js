@@ -7,6 +7,7 @@ var surveyJSON = {
     pages: [
         {
             name: "page1",
+            title: "WHO ARE YOU...",
             questions: [
                 {
                     type: "text",
@@ -47,6 +48,7 @@ var surveyJSON = {
         },
         {
             name: "page2",
+            title: "YOUR JOURNEY THROUGH HOCKEYLOVERZ...",
             questions: [
                 {
                     type: "dropdown",
@@ -98,12 +100,52 @@ var surveyJSON = {
                         "6"
                     ],
                     name: "What is the first thing you do?"
+                },
+                {
+                    type: "radiogroup",
+                    // isRequired: true,
+                    choices: [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8"
+                    ],
+                    name: "What is the first thing you do?"
+                },
+                {
+                    type: "radiogroup",
+                    // isRequired: true,
+                    choices: [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6"
+                    ],
+                    name: "What is the first thing you do?"
+                },
+                {
+                    type: "radiogroup",
+                    // isRequired: true,
+                    choices: [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                    ],
+                    name: "What is the first thing you do?"
                 }
             ]
         },
         {
             name: "page3",
-            title: 'test',
+            title: 'ABOUT YOU RELATED TO THE NETHERLANDS',
             questions: [
                 {
                     type: "text",
@@ -159,7 +201,8 @@ function sendDataToServer(survey) {
     alert("The results are:" + JSON.stringify(survey.data));
     //You should get the Guid for storing survey data in dxSurvey.com
     survey.sendResult(surveyId);
-    $('#surveyContainer').addClass('hidden');
+    $('.survey-container').addClass('hidden');
+    $('#welcomeMessage').addClass('hidden');
     $('#endMessage').removeClass('hidden');
 }
 
@@ -194,6 +237,9 @@ $(document).on('click', '.sv_nav input', function (event) {
     if (firstRow.find('#sq_106').length) {
         page.addClass('timeline');
         setImagesAsRadio($('#sq_108'), 9);
+        setImagesAsRadio($('#sq_109'), 10);
+        setImagesAsRadio($('#sq_110'), 11);
+        setImagesAsRadio($('#sq_111'), 12);
     } else {
         page.removeClass('timeline');
     }
