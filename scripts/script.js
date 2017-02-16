@@ -1,9 +1,7 @@
-/**
- * Created by vincentdejong on 14-02-17.
- */
-
 // json to create survey
 var surveyJSON = {
+    showQuestionNumbers: "off",
+    showProgressBar: "top",
     pages: [
         {
             name: "page1",
@@ -233,6 +231,9 @@ $(document).on('click', '.sv_nav input', function (event) {
     var page = $('#sq_page');
     var firstRow = $('.sv_row').first();
 
+    // Hide previous button
+    $('.sv_nav input[type="button"][value="Previous"]').hide();
+
     // Add class to page
     if (firstRow.find('#sq_106').length) {
         page.addClass('timeline');
@@ -248,18 +249,15 @@ $(document).on('click', '.sv_nav input', function (event) {
 
 function readURL(input) {
     if (input.files && input.files[0]) {
-
-        if (!$('#blah').length) {
+        if (!$('#preview').length) {
             var parentInput = $('#sq_105i').parent();
-            parentInput.append('<img id="blah" src="#" alt="your image" width="auto" height="250px" />');
+            parentInput.append('<img id="preview" src="#" alt="your image" width="auto" height="250px" />');
         }
 
         var reader = new FileReader();
-
         reader.onload = function (e) {
-            $('#blah').attr('src', e.target.result);
+            $('#preview').attr('src', e.target.result);
         };
-
         reader.readAsDataURL(input.files[0]);
     }
 }
@@ -278,14 +276,13 @@ function setImagesAsRadio(div, question) {
     });
 }
 
-function addElementsToTimeline () {
+function addElementsToTimeline() {
     var timeline = $('.timeline');
-    timeline.find('.sv_p_title').append('<p class="journeyIntroText">We would like to know what your ideal HockeyLoverz festivalday looks like..you’re free to choose whatever you like. If the favourite option isn’t available, fill in the other option.</p>');
+    timeline.find('.sv_p_title').append('<p class="journeyIntroText">We would like to know what your ideal HockeyLoverz festivalday looks like..<br/>you’re free to choose whatever you like. If the favourite option isn’t available, fill in the other option.</p>');
     timeline.find('#sq_106').prepend('<p class="timelineTitle">Planning</p>');
     timeline.find('#sq_107').prepend('<p class="timelineTitle">On your way</p>');
     timeline.find('#sq_108').prepend('<p class="timelineTitle">Welcome to the festival!</p>');
     timeline.find('#sq_109').prepend('<p class="timelineTitle">During the day</p>');
     timeline.find('#sq_110').prepend('<p class="timelineTitle">The evening falls..</p>');
     timeline.find('#sq_111').prepend('<p class="timelineTitle">Partytime</p>');
-
 }
