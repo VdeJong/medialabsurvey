@@ -216,7 +216,7 @@ h4.sv_p_title {
     content: '';
     display: block;
     position: absolute;
-    top: 115px;
+    top: 220px;
     bottom: 25px;
     left: 50%;
     border-left: 1px solid #e63a74;
@@ -260,6 +260,20 @@ h4.sv_p_title {
 
 .timeline .sv_row:nth-of-type(odd):before {
     right: -10px;
+}
+
+.journeyIntroText {
+    color: black;
+    padding-top: 15px;
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 50px;
+}
+
+.timelineTitle {
+    font-size: 16px;
+    color: #e63a74;
+    font-weight: 500;
 }
 
 /* Radio images */

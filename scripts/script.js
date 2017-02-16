@@ -86,7 +86,7 @@ var surveyJSON = {
                             text: "No"
                         }
                     ],
-                    name: "Is this your first time going to a festival?"
+                    name: "You and your team are travelling to HockeyLoverz. Is this your first time going to a festival?"
                 },
                 {
                     type: "radiogroup",
@@ -99,7 +99,7 @@ var surveyJSON = {
                         "5",
                         "6"
                     ],
-                    name: "What is the first thing you do?"
+                    name: "It’s the second day of HockeyLoverz, you’re waking up and the sun is shining. Breakfast is already in your tummy.What is the first thing you do?"
                 },
                 {
                     type: "radiogroup",
@@ -114,7 +114,7 @@ var surveyJSON = {
                         "7",
                         "8"
                     ],
-                    name: "What is the first thing you do?"
+                    name: "You analyse the program of the day. What are you most excited about?"
                 },
                 {
                     type: "radiogroup",
@@ -127,7 +127,7 @@ var surveyJSON = {
                         "5",
                         "6"
                     ],
-                    name: "What is the first thing you do?"
+                    name: "You're heading to the bar, what do you order?"
                 },
                 {
                     type: "radiogroup",
@@ -139,7 +139,7 @@ var surveyJSON = {
                         "4",
                         "5"
                     ],
-                    name: "What is the first thing you do?"
+                    name: "The party is going, the DJ is on stage, where can we find you?"
                 }
             ]
         },
@@ -240,6 +240,7 @@ $(document).on('click', '.sv_nav input', function (event) {
         setImagesAsRadio($('#sq_109'), 10);
         setImagesAsRadio($('#sq_110'), 11);
         setImagesAsRadio($('#sq_111'), 12);
+        addElementsToTimeline();
     } else {
         page.removeClass('timeline');
     }
@@ -263,7 +264,7 @@ function readURL(input) {
     }
 }
 
-$("#sq_105i").change(function(){
+$("#sq_105i").change(function () {
     readURL(this);
 });
 
@@ -275,4 +276,16 @@ function setImagesAsRadio(div, question) {
     $.each(buttons, function (key, value) {
         $(value).find('span').css('background-image', 'url(images/question' + question + '-' + (key + 1) + '.png)');
     });
+}
+
+function addElementsToTimeline () {
+    var timeline = $('.timeline');
+    timeline.find('.sv_p_title').append('<p class="journeyIntroText">We would like to know what your ideal HockeyLoverz festivalday looks like..you’re free to choose whatever you like. If the favourite option isn’t available, fill in the other option.</p>');
+    timeline.find('#sq_106').prepend('<p class="timelineTitle">Planning</p>');
+    timeline.find('#sq_107').prepend('<p class="timelineTitle">On your way</p>');
+    timeline.find('#sq_108').prepend('<p class="timelineTitle">Welcome to the festival!</p>');
+    timeline.find('#sq_109').prepend('<p class="timelineTitle">During the day</p>');
+    timeline.find('#sq_110').prepend('<p class="timelineTitle">The evening falls..</p>');
+    timeline.find('#sq_111').prepend('<p class="timelineTitle">Partytime</p>');
+
 }
