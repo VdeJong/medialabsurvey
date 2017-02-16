@@ -196,3 +196,8 @@ $('[name="country"]').change(function() {
     inputElement.focus();
     inputElement.val(country);
 });
+
+$('#startSurvey').on('click', function () {
+    $('#surveyContainer').removeClass('hidden');
+    $('#welcomeMessage').addClass('hidden');
+});

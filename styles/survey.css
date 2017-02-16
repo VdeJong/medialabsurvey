@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 .centered {
   margin: 0 auto;
   float: none;
@@ -7,4 +12,57 @@
   opacity: 0;
   z-index: -1;
   position: absolute;
+}
+
+.intro-text {
+  color: white;
+}
+
+.startButton {
+  margin-top: 50px;
+  color: white;
+  background-color: #e63a74;
+  border: none;
+}
+
+.startButton:hover {
+  color: #e63a74;
+  background-color: white;
+}
+
+.welcome {
+  color: #e63a74;
+}
+
+.hidden {
+  display: none;
+}
+
+.hlLogo {
+  display: block;
+  margin: 0 auto;
+  width: 137px;
+  height: 62px;
+}
+
+#welcomeMessage {
+  width: 100%;
+  min-height: 100%;
+  background-image: url(../images/background-jumbo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.overlay {
+  content: '';
+  display: block;
+  position: absolute;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }
