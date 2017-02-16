@@ -2,6 +2,7 @@
  * Created by vincentdejong on 14-02-17.
  */
 
+// json to create survey
 var surveyJSON = {
     pages: [
         {
@@ -160,14 +161,17 @@ var surveyJSON = {
     ]
 };
 
+
 var surveyId = '0a816cb1-8086-4ffb-8d5b-d60231a8de32';
 
+// function to create survey based on json
 var survey = new Survey.Model(surveyJSON);
 $("#surveyContainer").Survey({
     model: survey,
     onComplete: sendDataToServer
 });
 
+// function to send data to dxsurvey.com
 function sendDataToServer(survey) {
     //send Ajax request to your web server.
     alert("The results are:" + JSON.stringify(survey.data));
@@ -175,6 +179,7 @@ function sendDataToServer(survey) {
     survey.sendResult(surveyId);
 }
 
+// function to add flagstrap plugin to input element
 $('#sq_100').flagStrap({
     inputName: "country",
     buttonSize: "btn-md",
@@ -184,10 +189,10 @@ $('#sq_100').flagStrap({
     scrollableHeight: "250px"
 });
 
+// get and set value of selected country
 $('[name="country"]').change(function() {
     var country = $(this).children(":selected").text();
     var inputElement = $("#sq_100i");
     inputElement.focus();
     inputElement.val(country);
-
 });
