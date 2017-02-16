@@ -44,7 +44,14 @@ html, body {
   height: 62px;
 }
 
-#welcomeMessage {
+.hlLogoLarge {
+  display: block;
+  margin: 0 auto;
+  width: 442px;
+  height: 200px;
+}
+
+#welcomeMessage, #endMessage {
   width: 100%;
   min-height: 100%;
   background-image: url(../images/background-jumbo.jpg);

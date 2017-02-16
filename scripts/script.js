@@ -159,6 +159,8 @@ function sendDataToServer(survey) {
     alert("The results are:" + JSON.stringify(survey.data));
     //You should get the Guid for storing survey data in dxSurvey.com
     survey.sendResult(surveyId);
+    $('#surveyContainer').addClass('hidden');
+    $('#endMessage').removeClass('hidden');
 }
 
 // function to add flagstrap plugin to input element
