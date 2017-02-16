@@ -8,6 +8,33 @@ html, body {
 
 .sv_nav {
     clear: both;
+    text-align: right;
+}
+
+.sv_nav input {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #e63a74;
+  border: none;
+  margin: 0 0 0 8px !important;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: background-color .2s, color .2s;
+  transition: background-color .2s, color .2s;
+}
+
+.sv_nav input:first-child {
+  margin: 0 !important;
+}
+
+.sv_nav input:hover {
+  color: #e63a74;
+  background-color: white;
+  font-weight: 400;
 }
 
 .centered {
@@ -27,15 +54,18 @@ html, body {
     background-repeat: no-repeat;
     background-position: center center;
     text-align: center;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0 0 100px 0;
+}
+
+.survey-container {
+  padding-bottom: 50px;
 }
 
 .welcome {
     color: #e63a74;
     font-weight: 400;
     line-height: 50px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .intro-text {
@@ -55,13 +85,23 @@ html, body {
     height: 62px;
 }
 
+.hlLogoLarge {
+    display: block;
+    margin: 0 auto;
+    width: 442px;
+    height: 200px;
+}
+
 .startButton {
-    margin-top: 75px;
+    margin-top: 50px;
     color: white;
     font-size: 16px;
     font-weight: 400;
     background-color: #e63a74;
     border: none;
+    text-transform: uppercase;
+    -webkit-transition: background-color .2s, color .2s;
+    transition: background-color .2s, color .2s;
 }
 
 .startButton:hover {
@@ -73,22 +113,32 @@ html, body {
 /* Inputs */
 .sv_row {
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.sv_p_title {
-    font-size: 20px;
+.sv_row:first-child {
+  margin: 0;
+}
+
+h4.sv_p_title {
+    font-size: 30px;
     color: #e63a74;
     text-align: center;
+    font-weight: 400;
+    line-height: 50px;
+    margin-top: 50px;
 }
 
 .sv_row h5 {
     font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
-.sv_row input, .sv_row textarea {
-    min-width: 226px;
+.sv_row input, .sv_row textarea, .sv_row select {
+    min-width: 126px;
     border: 1px solid #e63a74;
-    padding: 0 5px;
+    padding: 6px 12px;
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -96,8 +146,43 @@ html, body {
 }
 
 .sv_row input {
-    height: 34px;
-    line-height: 34px;
+  height: 34px;
+  line-height: 34px;
+}
+
+.sv_row textarea {
+  resize: vertical;
+}
+
+.sv_row input[type="file"] {
+  margin: 0 auto;
+  height: 36px;
+  line-height: 24px;
+}
+
+.sv_row select option {
+  font-weight: 300;
+}
+
+.sv_row input[type="radio"] {
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  min-width: inherit;
+  margin: 0;
+}
+
+.sv_q_radiogroup {
+  width: auto !important;
+  display: inline-block;
+  margin: 0 30px 0 0;
+}
+
+.sv_q_radiogroup span {
+  font-weight: 300;
+  margin: 0 0 0 8px !important;
+  position: relative;
+  top: -5px;
 }
 
 #sq_100i {
@@ -106,16 +191,18 @@ html, body {
     position: absolute;
 }
 
+#sq_100 button.btn-default {
+    border-color: #e63a74;
+    font-weight: 300;
+}
+
 #sq_100 .dropdown-menu {
     left: 50% !important;
     margin-left: -206px !important;
 }
 
-.hlLogoLarge {
-    display: block;
-    margin: 0 auto;
-    width: 442px;
-    height: 200px;
+#sq_100 .dropdown-menu > li > a {
+  font-weight: 300;
 }
 
 /* Timeline page*/
@@ -129,9 +216,9 @@ html, body {
     content: '';
     display: block;
     position: absolute;
-    top: 100px;
+    top: 115px;
+    bottom: 25px;
     left: 50%;
-    height: 100%;
     border-left: 1px solid #e63a74;
 }
 
@@ -140,18 +227,14 @@ html, body {
     clear: both;
     width: 50%;
     padding: 0 26px;
-    margin-top: 76px;
-}
-
-.timeline .sv_row:first-child {
-    margin-top: 0;
+    margin-bottom: 50px;
 }
 
 .timeline .sv_row:before {
     content: '';
     display: block;
     position: absolute;
-    top: 7px;
+    top: -2px;
     width: 20px;
     height: 20px;
     background: #e63a74;
@@ -162,20 +245,21 @@ html, body {
 }
 
 .timeline .sv_row:nth-of-type(even) {
+    float: right;
+    text-align: left;
+}
+
+.timeline .sv_row:nth-of-type(even):before {
+    left: -10px;
+}
+
+.timeline .sv_row:nth-of-type(odd) {
     float: left;
     text-align: right;
 }
 
-.timeline .sv_row:nth-of-type(even):before {
-    right: -10px;
-}
-
-.timeline .sv_row:nth-of-type(odd) {
-    float: right;
-}
-
 .timeline .sv_row:nth-of-type(odd):before {
-    left: -10px;
+    right: -10px;
 }
 
 /* Radio images */
