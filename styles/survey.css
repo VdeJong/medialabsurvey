@@ -1,6 +1,5 @@
 html, body {
   height: 100%;
-  overflow: hidden;
 }
 
 .centered {
@@ -65,4 +64,50 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: black;
+}
+
+.radio-images .sv_q_radiogroup {
+  width: auto !important;
+}
+.radio-images label {
+  margin: 18px;
+}
+.radio-images label > input {
+  position: absolute;
+  visibility: hidden;
+  margin: 0;
+}
+.radio-images label > span {
+  position: relative;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 170px;
+  height: 170px;
+  margin: 0 !important;
+  text-indent: -9999px;
+}
+.radio-images label > input:checked + span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e63a74;
+  opacity: 0.43;
+}
+.radio-images label > input:checked + span:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border: 5px solid #e63a74;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }

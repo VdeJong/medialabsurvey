@@ -88,73 +88,16 @@ var surveyJSON = {
                 },
                 {
                     type: "radiogroup",
-                    // isRequired: true,
+                    isRequired: true,
                     choices: [
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "no",
-                            text: "No"
-                        }
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6"
                     ],
-                    name: "Is this your first time going to a festival?"
-                },
-                {
-                    type: "radiogroup",
-                    // isRequired: true,
-                    choices: [
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "yes",
-                            text: "Yes"
-                        },
-                        {
-                            value: "no",
-                            text: "No"
-                        }
-                    ],
-                    name: "Is this your first time going to a festival?"
+                    name: "What is the first thing you do?"
                 }
             ]
         }
@@ -201,3 +144,26 @@ $('#startSurvey').on('click', function () {
     $('#surveyContainer').removeClass('hidden');
     $('#welcomeMessage').addClass('hidden');
 });
+
+$(document).on('click', '.sv_nav input', function(event) {
+  var page = $('#sq_page');
+  var firstRow = $('.sv_row').first();
+
+  // Add class to page
+  if(firstRow.find('#sq_106').length) {
+    page.addClass('timeline');
+    setImagesAsRadio($('#sq_108'), 9);
+  } else {
+    page.removeClass('timeline');
+  }
+});
+
+// Function to set the images as radio buttons
+function setImagesAsRadio(div, question) {
+  div.addClass('radio-images');
+  var buttons = div.find('label');
+
+  $.each(buttons, function(key, value) {
+    $(value).find('span').css('background-image', 'url(images/question'+ question +'-'+ (key + 1) +'.png)');
+  });
+}
