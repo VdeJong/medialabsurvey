@@ -281,13 +281,29 @@ function setImagesAsRadio(div, question) {
     });
 }
 
+$('#sq_107').on('click', function () {
+    addElementsToTimeline()
+});
+
+$('select').on('change', function () {
+    console.log('test');
+
+
+    // addElementsToTimeline()
+    $('#sq_106').addClass('hidden');
+});
+
 function addElementsToTimeline() {
     var timeline = $('.timeline');
     timeline.find('.sv_p_title').append('<p class="journeyIntroText">We would like to know what your ideal HockeyLoverz festivalday looks like..<br/>you’re free to choose whatever you like. If the favourite option isn’t available, fill in the other option.</p>');
-    timeline.find('#sq_106').prepend('<p class="timelineTitle">Planning</p>');
-    timeline.find('#sq_107').prepend('<p class="timelineTitle">On your way</p>');
-    timeline.find('#sq_108').prepend('<p class="timelineTitle">Welcome to the festival!</p>');
-    timeline.find('#sq_109').prepend('<p class="timelineTitle">During the day</p>');
-    timeline.find('#sq_110').prepend('<p class="timelineTitle">The evening falls..</p>');
-    timeline.find('#sq_111').prepend('<p class="timelineTitle">Partytime</p>');
+    timeline.find('#sq_106').parent().prepend('<p class="timelineTitle">Planning</p>');
+    timeline.find('#sq_107').parent().prepend('<p class="timelineTitle">On your way</p>');
+
+    timeline.find('#sq_108').parent().prepend('<p class="timelineTitle">Welcome to the festival!</p>');
+
+    timeline.find('#sq_109').parent().prepend('<p class="timelineTitle">During the day</p>');
+
+    timeline.find('#sq_110').parent().prepend('<p class="timelineTitle">The evening falls..</p>');
+
+    timeline.find('#sq_111').parent().prepend('<p class="timelineTitle">Partytime</p>');
 }
