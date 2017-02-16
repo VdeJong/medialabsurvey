@@ -243,6 +243,11 @@ $(document).on('click', '.sv_nav input', function (event) {
         addElementsToTimeline();
     } else {
         page.removeClass('timeline');
+        $('.journeyIntroText').remove();
+    }
+
+    if (firstRow.find('#sq_112').length) {
+        $('#sq_117').parent().prepend('<p class="subTitle">ENOUGH ABOUT THE NETHERLANDS, WE ARE ALSO CURIOUS ABOUT YOUR COUNTRY..</p>')
     }
 });
 
@@ -287,5 +292,4 @@ function addElementsToTimeline () {
     timeline.find('#sq_109').prepend('<p class="timelineTitle">During the day</p>');
     timeline.find('#sq_110').prepend('<p class="timelineTitle">The evening falls..</p>');
     timeline.find('#sq_111').prepend('<p class="timelineTitle">Partytime</p>');
-
 }
