@@ -201,6 +201,7 @@ html, body {
     background-repeat: no-repeat;
     background-position: center center;
     width: 170px;
+    color: transparent;
     height: 170px;
     margin: 0 !important;
     text-indent: -9999px;

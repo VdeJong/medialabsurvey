@@ -245,6 +245,28 @@ $(document).on('click', '.sv_nav input', function (event) {
     }
 });
 
+function readURL(input) {
+    if (input.files && input.files[0]) {
+
+        if (!$('#blah').length) {
+            var parentInput = $('#sq_105i').parent();
+            parentInput.append('<img id="blah" src="#" alt="your image" width="auto" height="250px" />');
+        }
+
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#sq_105i").change(function(){
+    readURL(this);
+});
+
 // Function to set the images as radio buttons
 function setImagesAsRadio(div, question) {
     div.addClass('radio-images');
