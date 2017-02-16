@@ -94,6 +94,7 @@ html, body {
 .hlLogoLarge {
     display: block;
     margin: 0 auto;
+    margin-top: 40px;
     width: 442px;
     height: 200px;
 }
@@ -246,6 +247,15 @@ h4.sv_p_title {
 
 #sq_100 .dropdown-menu > li > a {
   font-weight: 300;
+}
+
+/* Relation to the Netherlands */
+.subTitle {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    color: #e63a74;
 }
 
 /* Timeline page*/

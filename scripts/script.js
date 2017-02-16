@@ -244,6 +244,11 @@ $(document).on('click', '.sv_nav input', function (event) {
         addElementsToTimeline();
     } else {
         page.removeClass('timeline');
+        $('.journeyIntroText').remove();
+    }
+
+    if (firstRow.find('#sq_112').length) {
+        $('#sq_117').parent().prepend('<p class="subTitle">ENOUGH ABOUT THE NETHERLANDS, WE ARE ALSO CURIOUS ABOUT YOUR COUNTRY..</p>')
     }
 });
 
