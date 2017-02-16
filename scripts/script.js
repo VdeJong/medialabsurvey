@@ -88,16 +88,55 @@ var surveyJSON = {
                 },
                 {
                     type: "radiogroup",
-                    isRequired: true,
+                    // isRequired: true,
                     choices: [
-                      "1",
-                      "2",
-                      "3",
-                      "4",
-                      "5",
-                      "6"
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6"
                     ],
                     name: "What is the first thing you do?"
+                }
+            ]
+        },
+        {
+            name: "page3",
+            title: 'test',
+            questions: [
+                {
+                    type: "text",
+                    name: "Describe the Netherlands in one word."
+                },
+                {
+                    type: "comment",
+                    name: "What would you really want to do in the Netherlands?"
+                },
+                {
+                    type: "comment",
+                    name: "Do you have any connection to the Netherlands? If so, what?"
+                },
+                {
+                    type: "text",
+                    inputType: "number",
+                    title: "How long is your team planning to stay in the Netherlands, in days?",
+                    name: "question4"
+                },
+                {
+                    type: "comment",
+                    name: "What are you going to do in the Netherlands when you're not at HockeyLoverz?",
+                    visible: false,
+                    visibleIf: "{question4}>=3"
+                },
+                {
+                    type: "comment",
+                    name: "Is there anything you would like to bring to HockeyLoverz from your country. Even is this isn't possible right now?",
+                    placeHolder: 'Your favourite drink, your parents or your piano'
+                },
+                {
+                    type: "comment",
+                    name: "If Dutch people would come to your country, what is something they must have done or seen?"
                 }
             ]
         }
@@ -133,7 +172,7 @@ $('#sq_100').flagStrap({
 });
 
 // get and set value of selected country
-$('[name="country"]').change(function() {
+$('[name="country"]').change(function () {
     var country = $(this).children(":selected").text();
     var inputElement = $("#sq_100i");
     inputElement.focus();
@@ -145,25 +184,25 @@ $('#startSurvey').on('click', function () {
     $('#welcomeMessage').addClass('hidden');
 });
 
-$(document).on('click', '.sv_nav input', function(event) {
-  var page = $('#sq_page');
-  var firstRow = $('.sv_row').first();
+$(document).on('click', '.sv_nav input', function (event) {
+    var page = $('#sq_page');
+    var firstRow = $('.sv_row').first();
 
-  // Add class to page
-  if(firstRow.find('#sq_106').length) {
-    page.addClass('timeline');
-    setImagesAsRadio($('#sq_108'), 9);
-  } else {
-    page.removeClass('timeline');
-  }
+    // Add class to page
+    if (firstRow.find('#sq_106').length) {
+        page.addClass('timeline');
+        setImagesAsRadio($('#sq_108'), 9);
+    } else {
+        page.removeClass('timeline');
+    }
 });
 
 // Function to set the images as radio buttons
 function setImagesAsRadio(div, question) {
-  div.addClass('radio-images');
-  var buttons = div.find('label');
+    div.addClass('radio-images');
+    var buttons = div.find('label');
 
-  $.each(buttons, function(key, value) {
-    $(value).find('span').css('background-image', 'url(images/question'+ question +'-'+ (key + 1) +'.png)');
-  });
+    $.each(buttons, function (key, value) {
+        $(value).find('span').css('background-image', 'url(images/question' + question + '-' + (key + 1) + '.png)');
+    });
 }
