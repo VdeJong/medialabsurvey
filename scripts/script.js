@@ -182,7 +182,7 @@ $('[name="country"]').change(function () {
 });
 
 $('#startSurvey').on('click', function () {
-    $('#surveyContainer').removeClass('hidden');
+    $('.survey-container').removeClass('hidden');
     $('#welcomeMessage').addClass('hidden');
 });
 
