@@ -6,6 +6,10 @@ html, body {
     height: 100%;
 }
 
+body {
+    background-color: #f6f6f6;
+}
+
 .sv_body {
   position: relative;
   float: left;
@@ -60,7 +64,6 @@ html, body {
     background-repeat: no-repeat;
     background-position: center center;
     text-align: center;
-    padding: 0 0 100px 0;
 }
 
 .survey-container {
@@ -88,6 +91,7 @@ html, body {
     display: block;
     margin: 0 auto;
     width: 137px;
+    margin-top: 15px;
     height: 62px;
 }
 
@@ -95,12 +99,12 @@ html, body {
     display: block;
     margin: 0 auto;
     margin-top: 40px;
-    width: 442px;
-    height: 200px;
+    width: 100%;
+    height: auto;
 }
 
 .startButton {
-    margin-top: 50px;
+    margin-top: 30px;
     color: white;
     font-size: 16px;
     font-weight: 400;

@@ -29,10 +29,14 @@ var surveyJSON = {
                     type: "text",
                     // isRequired: true,
                     inputType: "number",
+                    placeHolder: "0",
+                    size: "4",
                     name: "How long have you been playing hockey, in years?"
                 },
                 {
                     type: "comment",
+                    cols: "40",
+                    rows: "3",
                     // isRequired: true,
                     name: "What is your favourite festival, and why?",
                     placeHolder: "My favourite festival is ... , because ..."
@@ -151,15 +155,20 @@ var surveyJSON = {
                 },
                 {
                     type: "comment",
+                    cols: "40",
+                    rows: "3",
                     name: "What would you really want to do in the Netherlands?"
                 },
                 {
                     type: "comment",
+                    cols: "40",
+                    rows: "3",
                     name: "Do you have any connection to the Netherlands? If so, what?"
                 },
                 {
                     type: "text",
                     inputType: "number",
+                    placeHolder: "0",
                     title: "How long is your team planning to stay in the Netherlands, in days?",
                     name: "question4"
                 },
@@ -167,15 +176,21 @@ var surveyJSON = {
                     type: "comment",
                     name: "What are you going to do in the Netherlands when you're not at HockeyLoverz?",
                     visible: false,
+                    cols: "40",
+                    rows: "3",
                     visibleIf: "{question4}>=3"
                 },
                 {
                     type: "comment",
+                    cols: "40",
+                    rows: "3",
                     name: "Is there anything you would like to bring to HockeyLoverz from your country. Even is this isn't possible right now?",
                     placeHolder: 'Your favourite drink, your parents or your piano'
                 },
                 {
                     type: "comment",
+                    cols: "40",
+                    rows: "3",
                     name: "If Dutch people would come to your country, what is something they must have done or seen?"
                 }
             ]
@@ -244,6 +259,7 @@ $(document).on('click', '.sv_nav input', function (event) {
         addElementsToTimeline();
     } else {
         page.removeClass('timeline');
+        $('.timelineTitle').remove();
         $('.journeyIntroText').remove();
     }
 
@@ -271,6 +287,8 @@ $("#sq_105i").change(function () {
     readURL(this);
 });
 
+// $('#sq_105i').parent().append('<label for="file-upload" class="custom-file-upload"><i class="fa fa-cloud-upload"></i> Custom Upload </label>');
+
 // Function to set the images as radio buttons
 function setImagesAsRadio(div, question) {
     div.addClass('radio-images');
@@ -280,18 +298,6 @@ function setImagesAsRadio(div, question) {
         $(value).find('span').css('background-image', 'url(images/question' + question + '-' + (key + 1) + '.png)');
     });
 }
-
-$('#sq_107').on('click', function () {
-    addElementsToTimeline()
-});
-
-$('select').on('change', function () {
-    console.log('test');
-
-
-    // addElementsToTimeline()
-    $('#sq_106').addClass('hidden');
-});
 
 function addElementsToTimeline() {
     var timeline = $('.timeline');
