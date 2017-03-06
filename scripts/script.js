@@ -1,6 +1,19 @@
 // json to create survey
 
-var isChrome = !!window.chrome && !!window.chrome.webstore;
+var isChrome;
+
+var isChromium = window.chrome,
+    winNav = window.navigator,
+    vendorName = winNav.vendor,
+    isOpera = winNav.userAgent.indexOf("OPR") > -1,
+    isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+    isIOSChrome = winNav.userAgent.match("CriOS");
+
+if (isIOSChrome) {
+    isChrome = true;
+} else if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+    isChrome = true;
+}
 
 if (isChrome == true) {
 
@@ -99,12 +112,12 @@ if (isChrome == true) {
                         type: "radiogroup",
                         isRequired: true,
                         choices: [
-                            "1",
-                            "2",
-                            "3",
-                            "4",
-                            "5",
-                            "6"
+                            "lachen met vrienden",
+                            "douchen",
+                            "relaxen",
+                            "bier drinken",
+                            "hockeyen",
+                            "yoga"
                         ],
                         name: "It’s the second day of HockeyLoverz, you’re waking up and the sun is shining. Breakfast is already in your tummy.What is the first thing you do?"
                     },
@@ -112,14 +125,14 @@ if (isChrome == true) {
                         type: "radiogroup",
                         isRequired: true,
                         choices: [
-                            "1",
-                            "2",
-                            "3",
-                            "4",
-                            "5",
-                            "6",
-                            "7",
-                            "8"
+                            "feesten",
+                            "lachen met vrienden",
+                            "shisha",
+                            "zwemmen",
+                            "hockeyen",
+                            "bier drinen",
+                            "slapen",
+                            "cocktail"
                         ],
                         name: "You analyse the program of the day. What are you most excited about?"
                     },
@@ -127,12 +140,12 @@ if (isChrome == true) {
                         type: "radiogroup",
                         isRequired: true,
                         choices: [
-                            "1",
-                            "2",
-                            "3",
-                            "4",
-                            "5",
-                            "6"
+                            "cocktail",
+                            "cola",
+                            "bier",
+                            "water",
+                            "smoothie",
+                            "breezer"
                         ],
                         name: "You're heading to the bar, what do you order?"
                     },
@@ -140,11 +153,11 @@ if (isChrome == true) {
                         type: "radiogroup",
                         isRequired: true,
                         choices: [
-                            "1",
-                            "2",
-                            "3",
-                            "4",
-                            "5"
+                            "hockey",
+                            "dansvloer",
+                            "chillzone",
+                            "tent",
+                            "vooraan"
                         ],
                         name: "The party is going, the DJ is on stage, where can we find you?"
                     }
@@ -250,6 +263,8 @@ if (isChrome == true) {
         $('#welcomeMessage').addClass('hidden');
     });
 
+    var bool;
+
     $(document).on('click', '.sv_nav input', function (event) {
         var page = $('#sq_page');
         var firstRow = $('.sv_row').first();
@@ -264,7 +279,10 @@ if (isChrome == true) {
             setImagesAsRadio($('#sq_109'), 10);
             setImagesAsRadio($('#sq_110'), 11);
             setImagesAsRadio($('#sq_111'), 12);
-            addElementsToTimeline();
+
+            if (bool != false) {
+                addElementsToTimeline();
+            }
         } else {
             page.removeClass('timeline');
             $('.timelineTitle').remove();
@@ -295,7 +313,6 @@ if (isChrome == true) {
         readURL(this);
     });
 
-// $('#sq_105i').parent().append('<label for="file-upload" class="custom-file-upload"><i class="fa fa-cloud-upload"></i> Custom Upload </label>');
 
 // Function to set the images as radio buttons
     function setImagesAsRadio(div, question) {
@@ -309,7 +326,7 @@ if (isChrome == true) {
 
     function addElementsToTimeline() {
         var timeline = $('.timeline');
-        timeline.find('.sv_p_title').append('<p class="journeyIntroText">We would like to know what your ideal HockeyLoverz festivalday looks like..<br/>you’re free to choose whatever you like. If the favourite option isn’t available, fill in the other option.</p>');
+        timeline.find('.sv_p_title').append('<p class="journeyIntroText">We would like to know what your ideal HockeyLoverz festivalday looks like..<br/>you’re free to choose whatever you like.</p>');
         timeline.find('#sq_106').parent().prepend('<p class="timelineTitle">Planning</p>');
         timeline.find('#sq_107').parent().prepend('<p class="timelineTitle">On your way</p>');
 
@@ -320,6 +337,8 @@ if (isChrome == true) {
         timeline.find('#sq_110').parent().prepend('<p class="timelineTitle">The evening falls..</p>');
 
         timeline.find('#sq_111').parent().prepend('<p class="timelineTitle">Partytime</p>');
+
+        bool = false;
     }
 
 }

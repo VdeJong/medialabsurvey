@@ -12,7 +12,7 @@ body {
 
 .no-chrome {
   color: white;
-  width: 500px;
+  max-width: 500px;
   text-align: center;
   margin: 0 auto;
   padding-top: 15%;
