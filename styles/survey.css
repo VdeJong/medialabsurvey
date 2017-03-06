@@ -10,6 +10,14 @@ body {
     background-color: #f6f6f6;
 }
 
+.no-chrome {
+  color: white;
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 15%;
+}
+
 .sv_body {
   position: relative;
   float: left;
@@ -68,6 +76,7 @@ body {
 
 .survey-container {
   padding-bottom: 50px;
+  overflow-x: hidden;
 }
 
 .welcome {
@@ -100,6 +109,7 @@ body {
     margin: 0 auto;
     margin-top: 40px;
     width: 100%;
+    max-width: 237px;
     height: auto;
 }
 
@@ -113,6 +123,11 @@ body {
     text-transform: uppercase;
     -webkit-transition: background-color .2s, color .2s;
     transition: background-color .2s, color .2s;
+}
+@media only screen and (max-width: 425px) {
+  .startButton {
+    margin-bottom: 50px;
+  }
 }
 
 .startButton:hover {
@@ -191,15 +206,30 @@ h4.sv_p_title {
   height: 34px;
   line-height: 34px;
 }
+@media only screen and (max-width: 425px) {
+  .sv_row input {
+      width: 100%;
+  }
+}
 
 .sv_row textarea {
   resize: vertical;
+}
+@media only screen and (max-width: 425px) {
+  .sv_row textarea {
+      width: 100%;
+  }
 }
 
 .sv_row input[type="file"] {
   margin: 0 auto;
   height: 36px;
   line-height: 24px;
+}
+@media only screen and (max-width: 425px) {
+  .sv_row input[type="file"] {
+      width: 100%;
+  }
 }
 
 .sv_row #preview {
@@ -250,6 +280,12 @@ h4.sv_p_title {
     left: 50% !important;
     margin-left: -206px !important;
 }
+@media only screen and (max-width: 425px) {
+  #sq_100 .dropdown-menu {
+      width: 280px;
+      margin-left: -140px !important;
+  }
+}
 
 #sq_100 .dropdown-menu > li > a {
   font-weight: 300;
@@ -265,54 +301,56 @@ h4.sv_p_title {
 }
 
 /* Timeline page*/
-.timeline:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 225px;
-    bottom: 25px;
-    left: 50%;
-    border-left: 1px solid #e63a74;
-}
+@media only screen and (min-width: 426px) {
+  .timeline:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 225px;
+      bottom: 25px;
+      left: 50%;
+      border-left: 1px solid #e63a74;
+  }
 
-.timeline .sv_row {
-    position: relative;
-    clear: both;
-    width: 50%;
-    padding: 0 26px;
-    margin-bottom: 50px;
-}
+  .timeline .sv_row {
+      position: relative;
+      clear: both;
+      width: 50%;
+      padding: 0 26px;
+      margin-bottom: 50px;
+  }
 
-.timeline .sv_row:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    background: #e63a74;
+  .timeline .sv_row:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: #e63a74;
 
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+  }
 
-.timeline .sv_row:nth-of-type(even) {
-    float: right;
-    text-align: left;
-}
+  .timeline .sv_row:nth-of-type(even) {
+      float: right;
+      text-align: left;
+  }
 
-.timeline .sv_row:nth-of-type(even):before {
-    left: -10px;
-}
+  .timeline .sv_row:nth-of-type(even):before {
+      left: -10px;
+  }
 
-.timeline .sv_row:nth-of-type(odd) {
-    float: left;
-    text-align: right;
-}
+  .timeline .sv_row:nth-of-type(odd) {
+      float: left;
+      text-align: right;
+  }
 
-.timeline .sv_row:nth-of-type(odd):before {
-    right: -10px;
+  .timeline .sv_row:nth-of-type(odd):before {
+      right: -10px;
+  }
 }
 
 .journeyIntroText {
@@ -339,6 +377,11 @@ h4.sv_p_title {
 .radio-images label {
     margin: 15px;
 }
+@media only screen and (max-width: 768px) {
+  .radio-images label {
+    margin: 6px;
+  }
+}
 
 .radio-images label > input {
     position: absolute;
@@ -357,6 +400,12 @@ h4.sv_p_title {
     height: 170px;
     margin: 0 !important;
     text-indent: -9999px;
+}
+@media only screen and (max-width: 768px) {
+  .radio-images label > span {
+    width: 110px;
+    height: 100px;
+  }
 }
 
 .radio-images label > input + span:before {
