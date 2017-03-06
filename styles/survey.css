@@ -269,6 +269,7 @@ h4.sv_p_title {
     opacity: 0;
     z-index: -1;
     position: absolute;
+    text-indent: -9999px;
 }
 
 #sq_100 button.btn-default {
