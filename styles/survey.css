@@ -11,19 +11,11 @@ body {
 }
 
 .no-chrome {
-<<<<<<< Updated upstream
   color: white;
   width: 500px;
   text-align: center;
   margin: 0 auto;
   padding-top: 15%;
-=======
-    color: white;
-    width: 500px;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 15%;
->>>>>>> Stashed changes
 }
 
 .sv_body {
@@ -278,7 +270,6 @@ h4.sv_p_title {
     z-index: -1;
     text-indent: -9999px;
     position: absolute;
-    text-indent: -9999px;
 }
 
 #sq_100 button.btn-default {
