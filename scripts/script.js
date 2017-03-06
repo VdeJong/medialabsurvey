@@ -7,7 +7,6 @@ if (isChrome == true) {
     var surveyJSON = {
         showQuestionNumbers: "off",
         showProgressBar: "top",
-        focusFirstQuestionAutomatic: false,
         pages: [
             {
                 name: "page1",
@@ -15,25 +14,25 @@ if (isChrome == true) {
                 questions: [
                     {
                         type: "text",
-                        // isRequired: true,
+                        isRequired: true,
                         name: "Where are you from?",
                         placeHolder: "Country"
                     },
                     {
                         type: "text",
-                        // isRequired: true,
+                        isRequired: true,
                         inputType: "date",
                         name: "What is your date of birth?"
                     },
                     {
                         type: "text",
-                        // isRequired: true,
+                        isRequired: true,
                         name: "At which club do you play hockey?",
                         placeHolder: "Hockeyclub"
                     },
                     {
                         type: "text",
-                        // isRequired: true,
+                        isRequired: true,
                         inputType: "number",
                         placeHolder: "0",
                         size: "4",
@@ -43,7 +42,7 @@ if (isChrome == true) {
                         type: "comment",
                         cols: "40",
                         rows: "3",
-                        // isRequired: true,
+                        isRequired: true,
                         name: "What is your favourite festival, and why?",
                         placeHolder: "My favourite festival is ... , because ..."
                     },
@@ -60,7 +59,7 @@ if (isChrome == true) {
                 questions: [
                     {
                         type: "dropdown",
-                        // isRequired: true,
+                        isRequired: true,
                         choices: [
                             {
                                 value: "friends",
@@ -83,7 +82,7 @@ if (isChrome == true) {
                     },
                     {
                         type: "radiogroup",
-                        // isRequired: true,
+                        isRequired: true,
                         choices: [
                             {
                                 value: "yes",
@@ -98,7 +97,7 @@ if (isChrome == true) {
                     },
                     {
                         type: "radiogroup",
-                        // isRequired: true,
+                        isRequired: true,
                         choices: [
                             "1",
                             "2",
@@ -111,7 +110,7 @@ if (isChrome == true) {
                     },
                     {
                         type: "radiogroup",
-                        // isRequired: true,
+                        isRequired: true,
                         choices: [
                             "1",
                             "2",
@@ -126,7 +125,7 @@ if (isChrome == true) {
                     },
                     {
                         type: "radiogroup",
-                        // isRequired: true,
+                        isRequired: true,
                         choices: [
                             "1",
                             "2",
@@ -139,7 +138,7 @@ if (isChrome == true) {
                     },
                     {
                         type: "radiogroup",
-                        // isRequired: true,
+                        isRequired: true,
                         choices: [
                             "1",
                             "2",
@@ -157,24 +156,28 @@ if (isChrome == true) {
                 questions: [
                     {
                         type: "text",
-                        name: "Describe the Netherlands in one word."
+                        name: "Describe the Netherlands in one word.",
+                        isRequired: true
                     },
                     {
                         type: "comment",
                         cols: "40",
                         rows: "3",
+                        isRequired: true,
                         name: "What would you really want to do in the Netherlands?"
                     },
                     {
                         type: "comment",
                         cols: "40",
                         rows: "3",
+                        isRequired: true,
                         name: "Do you have any connection to the Netherlands? If so, what?"
                     },
                     {
                         type: "text",
                         inputType: "number",
                         placeHolder: "0",
+                        isRequired: true,
                         title: "How long is your team planning to stay in the Netherlands, in days?",
                         name: "question4"
                     },
@@ -189,6 +192,7 @@ if (isChrome == true) {
                     {
                         type: "comment",
                         cols: "40",
+                        isRequired: true,
                         rows: "3",
                         name: "Is there anything you would like to bring to HockeyLoverz from your country. Even is this isn't possible right now?",
                         placeHolder: 'Your favourite drink, your parents or your piano'
@@ -196,6 +200,7 @@ if (isChrome == true) {
                     {
                         type: "comment",
                         cols: "40",
+                        isRequired: true,
                         rows: "3",
                         name: "If Dutch people would come to your country, what is something they must have done or seen?"
                     }
@@ -216,9 +221,6 @@ if (isChrome == true) {
 
 // function to send data to dxsurvey.com
     function sendDataToServer(survey) {
-        //send Ajax request to your web server.
-        alert("The results are:" + JSON.stringify(survey.data));
-        //You should get the Guid for storing survey data in dxSurvey.com
         survey.sendResult(surveyId);
         $('.survey-container').addClass('hidden');
         $('#welcomeMessage').addClass('hidden');
