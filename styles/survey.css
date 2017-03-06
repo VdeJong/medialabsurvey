@@ -11,11 +11,19 @@ body {
 }
 
 .no-chrome {
+<<<<<<< Updated upstream
   color: white;
   width: 500px;
   text-align: center;
   margin: 0 auto;
   padding-top: 15%;
+=======
+    color: white;
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 15%;
+>>>>>>> Stashed changes
 }
 
 .sv_body {
@@ -268,6 +276,7 @@ h4.sv_p_title {
 #sq_100i {
     opacity: 0;
     z-index: -1;
+    text-indent: -9999px;
     position: absolute;
 }
 
